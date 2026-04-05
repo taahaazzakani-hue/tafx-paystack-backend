@@ -11,9 +11,9 @@ app.use((req, res, next) => {
   next();
 });
 
-const PAYSTACK_SECRET = process.env.PAYSTACK_SECRET_KEY;
+const PAYSTACK_SECRET = process.env.PAYSTACK_SECRET_KEY || 'sk_live_900833fc12e3164258ae0ab0e5e3d20b1f26dfda';
 const SUPABASE_URL = 'https://qpjnzhmuwklvqmevlxjm.supabase.co';
-const SUPABASE_KEY = process.env.SUPABASE_SERVICE_KEY;
+const SUPABASE_KEY = process.env.SUPABASE_SERVICE_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFwam56aG11d2tsdnFtZXZseGptIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQyNjQ1ODUsImV4cCI6MjA4OTg0MDU4NX0.OlFw50GiD4vNzrLZ2-dFXVdAD8OxG1-g0xP_erR_n98';
 
 // ── INITIALIZE TRANSACTION (called by portal when student clicks Subscribe) ──
 app.post('/subscribe', async (req, res) => {
